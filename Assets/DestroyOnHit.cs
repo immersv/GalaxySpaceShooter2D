@@ -24,9 +24,9 @@ public class DestroyOnHit : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
-        else
+        else if (collision.tag == "laserBullet")
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
