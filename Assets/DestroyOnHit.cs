@@ -22,11 +22,15 @@ public class DestroyOnHit : MonoBehaviour
         }
         else if (collision.tag == "Player")
         {
+            FindObjectOfType<SoundManager>().Play("playerDeath");
             Destroy(collision.gameObject);
+            
         }
         else if (collision.tag == "laserBullet")
         {
+            FindObjectOfType<SoundManager>().Play("laserBulletHit");
             gameObject.SetActive(false);
+            collision.gameObject.SetActive(false);
         }
     }
 
